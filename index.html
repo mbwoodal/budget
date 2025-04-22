@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="auth-page">
+    <h2>Login / Register</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <button onclick="register()">Register</button>
+  </div>
+
+  <div id="main-app" class="hidden">
+    <header>
+      <h1>Budget Tracker</h1>
+      <div class="nav">
+        <button onclick="prevMonth()">&lt; Prev</button>
+        <span id="current-month"></span>
+        <button onclick="nextMonth()">Next &gt;</button>
+      </div>
+    </header>
+
+    <section>
+      <form id="transaction-form">
+        <input type="number" id="amount" placeholder="Amount" required />
+        <input type="text" id="description" placeholder="Description (optional)" />
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+
+      <ul id="transactions"></ul>
+    </section>
+
+    <footer>
+      <p>Total Income: $<span id="total-income">0.00</span></p>
+      <p>Total Expense: $<span id="total-expense">0.00</span></p>
+      <p>Balance: $<span id="balance">0.00</span></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
